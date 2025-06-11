@@ -1,7 +1,7 @@
 public class RegrasDeDesconto {
     public static void main(String[] args) {
         Livros livro = new Livros();
-        livro.valor
+        livro.getValor();
 
         System.out.println("Valor atual: " + livro.valor);
 
