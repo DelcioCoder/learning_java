@@ -4,6 +4,8 @@ public class Livros {
     private double valor;
     String isbn;
     Autor autor; // Composição
+    private boolean impresso;
+
 
     public Livros(Autor autor) {
         this.autor = autor;
@@ -24,13 +26,13 @@ public class Livros {
     }
 
     public boolean setNome(String nome) {
-        if(nome.length() > 2)  {
-            return false;
-        } else {
-            this.nome = nome;
+        if (nome.length() <= 2) {
+            return false; // Nome muito curto
         }
+        this.nome = nome;
         return true;
     }
+
 
 
     public void mostrarDetalhes() {
@@ -44,8 +46,6 @@ public class Livros {
 
     public boolean aplicaDescontoDe(double porcentagem) {
         if (porcentagem > 0.3) {
-            return false;
-        } else if(!this.impresso && porcentagem > 0.15) {
             return false;
         }
         this.valor -= this.valor * porcentagem;
